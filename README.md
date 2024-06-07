@@ -439,7 +439,7 @@ git clone git@github.com:llaoj/oauth2nsso.git
 cd oauth2nsso
 
 # 根据实际情况修改配置
-cp config.example.yaml /etc/oauth2nsso/config.yaml
+cp config.yaml /etc/oauth2nsso/config.yaml
 vi /etc/oauth2nsso/config.yaml
 ...
 
