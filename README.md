@@ -58,7 +58,7 @@ sql文件在data目录下，新建数据库名，通过mysql管理工具或登�
 ##### 注册手机号
 
 ```
-$ curl -X POST "http://127.0.0.1:8282/signup/mobile"  -i -d '{"mobile":"13522227564","passwd":"123456","code": "111111"}'
+$ curl -X POST "http://localhost:8020/signup/mobile"  -i -d '{"mobile":"13522227564","passwd":"123456","code": "111111"}'
 ```
 
 结果
@@ -79,7 +79,7 @@ Content-Length: 28
 ##### 手机号+密码 登录
 
 ```
-$ curl -X POST "http://127.0.0.1:8282/login"  -i -d '{"mobile":"13522227564","passwd":"123456"}'
+$ curl -X POST "http://localhost:8020/login"  -i -d '{"mobile":"13522227564","passwd":"123456"}'
 ```
 
 结果
@@ -103,7 +103,7 @@ Content-Length: 28
 ##### 手机号+验证码登录
 
 ```
-$  curl -X POST "http://127.0.0.1:8282/login/mobile"  -i -d '{"mobile":"13522227564","code":"123456"}'
+$  curl -X POST "http://localhost:8020/login/mobile"  -i -d '{"mobile":"13522227564","code":"123456"}'
 ```
 
 结果
@@ -129,7 +129,7 @@ Content-Length: 28
 使用上面登录获取的Access_Token获取用户信息。
 
 ```
-$ curl "http://127.0.0.1:8282/my/info" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NDIxOX0.FK-6ofW-ni8E7BcQ1tH9Z4vzQHDBbnyIcDZLEytRrfQ"
+$ curl "http://localhost:8020/my/info" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NDIxOX0.FK-6ofW-ni8E7BcQ1tH9Z4vzQHDBbnyIcDZLEytRrfQ"
 ```
 
 结果
@@ -143,7 +143,7 @@ $ curl "http://127.0.0.1:8282/my/info" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5
 ##### 查看手机号是否存在
 
 ```
-$  curl -X POST "http://127.0.0.1:8282/signup/mobile/exist"  -i -d '{"mobile":"13522227564"}'
+$  curl -X POST "http://localhost:8020/signup/mobile/exist"  -i -d '{"mobile":"13522227564"}'
 ```
 
 结果
@@ -162,7 +162,7 @@ Content-Length: 37
 ##### access token 续期
 
 ```
-$ curl -X POST "http://127.0.0.1:8282/renewal" -i -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NDIxOX0.FK-6ofW-ni8E7BcQ1tH9Z4vzQHDBbnyIcDZLEytRrfQ;Rfresh_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NjAxOX0.gJzzho2gP1nNrkUKdtvMh0R3jGFZpA-ku0dWDvLftu0"
+$ curl -X POST "http://localhost:8020/renewal" -i -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NDIxOX0.FK-6ofW-ni8E7BcQ1tH9Z4vzQHDBbnyIcDZLEytRrfQ;Rfresh_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NjAxOX0.gJzzho2gP1nNrkUKdtvMh0R3jGFZpA-ku0dWDvLftu0"
 ```
 
 结果：
@@ -186,7 +186,7 @@ Content-Length: 28
 ##### 登出系统
 
 ```
-$ curl -X POST "http://127.0.0.1:8282/logout" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NDIxOX0.FK-6ofW-ni8E7BcQ1tH9Z4vzQHDBbnyIcDZLEytRrfQ"
+$ curl -X POST "http://localhost:8020/logout" -b "Access_Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsImV4cCI6MTU5MTk1NDIxOX0.FK-6ofW-ni8E7BcQ1tH9Z4vzQHDBbnyIcDZLEytRrfQ"
 ```
 
 结果
